@@ -1,63 +1,77 @@
 # 🔐 Validador de Senhas com Autômatos Finitos
 
-Projeto de implementação de validadores de senhas utilizando conceitos de Teoria da Computação:
-- **AFD (Autômato Finito Determinístico)**
-- **AFND (Autômato Finito Não Determinístico)**
+Projeto desenvolvido com base em conceitos de **Teoria da Computação**, aplicando dois modelos clássicos de autômatos:
+
+- **AFD**: Autômato Finito Determinístico  
+- **AFND**: Autômato Finito Não Determinístico
+
+O objetivo é validar senhas com base em diferentes regras, explorando as características e limitações de cada modelo.
+
+---
 
 ## 📁 Estrutura do Projeto
+
+```bash
 validador-de-senhas/
-│
 ├── AFD/
-│ ├── main.c
-│ └── validador.h
-│
+│   ├── main.c
+│   └── validador.h
 ├── AFND/
-│ ├── main.c
-│ └── validador.h
-│
+│   ├── main.c
+│   └── validador.h
 └── README.md
+🧠 Conceitos Envolvidos
+✅ AFD (Autômato Finito Determinístico)
+Cada símbolo de entrada leva a um único estado possível
 
-Copy
+O fluxo é linear e rígido
 
-## 🧠 Conceitos Envolvidos
+Ideal para senhas com formato fixo
 
-### ✅ AFD (Autômato Finito Determinístico)
-- Cada símbolo de entrada leva a um único estado possível
-- Fluxo linear e rígido - a senha deve seguir exatamente a sequência esperada
-- Ideal para senhas com formato fixo
+🧩 Regras aplicadas:
+Um caractere especial no início (!, @, #, $, %, ^, &, *)
 
-#### 🧩 Regras aplicadas no AFD:
-1. 1 caractere especial no início (!, @, #, $, %, ^, &, *)
-2. 1 letra maiúscula (A-Z)
-3. 4 letras minúsculas (a-z)
-4. 3 dígitos numéricos (0-9)
-5. 1 caractere especial no final (mesmo conjunto do início)
+Uma letra maiúscula (A-Z)
 
-#### Exemplo de senha válida:
-```txt
+Quatro letras minúsculas (a-z)
+
+Três dígitos (0-9)
+
+Um caractere especial no final (mesmo conjunto do início)
+
+✅ Exemplo de senha válida:
+txt
+Copiar
+Editar
 !Senha123!
 🔀 AFND (Autômato Finito Não Determinístico)
-Permite múltiplas transições possíveis para o mesmo símbolo
+Permite múltiplas transições possíveis para um mesmo símbolo
 
-Mais flexível - a senha pode ter qualquer ordem, desde que respeite os requisitos mínimos
+A ordem dos elementos não importa
 
-Ideal quando a ordem dos elementos não importa
+Ideal para senhas com formato flexível
 
-🧩 Regras aplicadas no AFND:
+🧩 Regras aplicadas:
 Pelo menos 1 letra maiúscula
 
 Pelo menos 1 letra minúscula
 
 Pelo menos 1 caractere especial (!, @, #, $, %, ^, &, *)
 
-Pelo menos 8 caracteres no total
+Mínimo de 8 caracteres no total
 
-Exemplos de senhas válidas:
+✅ Exemplos de senhas válidas:
 txt
-Copy
+Copiar
+Editar
 aB@123xy
 @abcDE12
 X1y2z3!*
+👨‍💻 Autores
+Projeto desenvolvido por:
 
-##### Autor
-Projeto desenvolvido por André Carvalhal e Thiago Santana para fins didáticos no estudo de autômatos finitos.
+André Carvalhal
+
+Thiago Santana
+
+Com fins didáticos para o estudo prático de autômatos finitos e linguagens formais, utilizando a linguagem C.
